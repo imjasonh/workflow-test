@@ -37,6 +37,9 @@ jobs:
     needs: consume-matrix
     steps:
       - run: echo ${{ fromJSON(needs.consume-matrix.outputs.colors) }}
+      - run: echo ${{ fromJSON(needs.consume-matrix.outputs[0].colors) }}
+      - run: echo ${{ fromJSON(needs.consume-matrix.outputs[1].colors) }}
+      - run: echo ${{ fromJSON(needs.consume-matrix.outputs[2].colors) }}
 
   consume-matrix-2:
     runs-on: ubuntu-latest
