@@ -22,7 +22,7 @@ jobs:
 
   consume-matrix:
     runs-on: ubuntu-latest
-    needs: debug-matrix
+    needs: [debug-matrix, define-matrix]
     strategy:
       matrix:
         color: ${{ fromJSON(needs.define-matrix.outputs.colors) }}
